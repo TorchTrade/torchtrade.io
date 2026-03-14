@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TorchTrade — RL-Powered Trading. From Research to Production.</title>
+  <meta name="description" content="Open-source framework for building, training, and deploying reinforcement learning trading agents. Built on TorchRL & PyTorch.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="TorchTrade — RL-Powered Trading">
+  <meta property="og:description" content="Open-source framework for building, training, and deploying reinforcement learning trading agents. Built on TorchRL & PyTorch.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://torchtrade.io">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TorchTrade — RL-Powered Trading">
+  <meta name="twitter:description" content="From research to production. Multi-timeframe observations, 4 live brokers, spot & futures.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js"></script>
+  <!-- Fade-in animation styles -->
+  <style>
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- ====== Navigation ====== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="assets/logo-dark.png" alt="TorchTrade" class="nav-logo-img nav-logo-dark">
+        <img src="assets/logo.png" alt="TorchTrade" class="nav-logo-img nav-logo-light">
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#agents">Agents</a></li>
+        <li><a href="#brokers">Brokers</a></li>
+        <li><a href="#quickstart">Quick Start</a></li>
+        <li><a href="https://torchtrade.github.io/torchtrade/" target="_blank" rel="noopener">Docs</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
+        <a href="https://github.com/TorchTrade/torchtrade" class="github-link" aria-label="GitHub" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== Hero ====== -->
+  <section class="hero">
+    <div class="container">
+      <img src="assets/logo-dark.png" alt="TorchTrade" class="hero-logo hero-logo-dark">
+      <img src="assets/logo.png" alt="TorchTrade" class="hero-logo hero-logo-light">
+      <h1>RL-Powered Trading.<br><span class="gradient">Research to Production.</span></h1>
+      <p class="hero-subtitle">
+        Open-source framework for building, training, and deploying reinforcement learning trading agents. Multi-timeframe observations, 4 live brokers, spot &amp; futures — same code from backtest to mainnet.
+      </p>
+      <div class="hero-ctas">
+        <a href="https://github.com/TorchTrade/torchtrade" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          Get Started
+        </a>
+        <a href="#agents" class="btn btn-secondary">
+          Browse Agents
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Features ====== -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="fade-in">
+        <div class="section-label">Features</div>
+        <h2 class="section-title">Everything you need to trade with RL</h2>
+        <p class="section-subtitle">From multi-timeframe market data to production deployment on real exchanges.</p>
+      </div>
+      <div class="features-grid fade-in">
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F4CA;</div>
+          <h3>Multi-Timeframe Observations</h3>
+          <p>Your agent sees 1-minute, 5-minute, 15-minute, and 1-hour data simultaneously. Rich market context at every decision point.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F310;</div>
+          <h3>4 Live Brokers</h3>
+          <p>Deploy to Alpaca (US stocks &amp; crypto), Binance Futures, Bitget Futures, or Bybit Futures. Paper trading included.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F4B9;</div>
+          <h3>Spot &amp; Futures</h3>
+          <p>Long-only spot trading or leveraged long/short futures with configurable leverage up to 125x. Bracket orders with SL/TP.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F525;</div>
+          <h3>TorchRL-Native</h3>
+          <p>Built on TensorDict and TorchRL. Composable transforms, standard loss modules, and seamless integration with PPO, DQN, SAC, and more.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F680;</div>
+          <h3>Research to Production</h3>
+          <p>Same environment code for backtesting and live trading. Train offline, validate, then deploy — no rewrite needed.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F50D;</div>
+          <h3>Policy Analysis</h3>
+          <p>Behavioral fingerprinting, regime-conditional metrics, and buy-and-hold detection. Know what your agent actually learned.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== How It Works ====== -->
+  <section class="section" id="how-it-works" style="background: var(--bg-surface);">
+    <div class="container">
+      <div class="fade-in">
+        <div class="section-label">How It Works</div>
+        <h2 class="section-title">Three steps to a live trading agent</h2>
+      </div>
+      <div class="steps fade-in">
+        <!-- Step 1: Research -->
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Research</h3>
+          <p>Backtest strategies on historical data with offline environments.</p>
+          <div class="code-block">
+<code><span class="keyword">from</span> torchtrade.envs.offline <span class="keyword">import</span> <span class="function">SequentialTradingEnv</span>
+<span class="keyword">from</span> torchtrade.envs.offline <span class="keyword">import</span> <span class="function">SequentialTradingEnvConfig</span>
+
+config = <span class="function">SequentialTradingEnvConfig</span>(
+    trading_mode=<span class="string">"futures"</span>,
+    time_frames=[<span class="string">"5min"</span>, <span class="string">"15min"</span>, <span class="string">"60min"</span>],
+    leverage=<span class="number">5.0</span>,
+)
+env = <span class="function">SequentialTradingEnv</span>(df, config)</code>
+          </div>
+        </div>
+        <!-- Step 2: Train -->
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Train</h3>
+          <p>Train RL agents with PPO, DQN, GRPO, or your own algorithm.</p>
+          <div class="code-block">
+<code><span class="comment"># Hydra config-driven training</span>
+<span class="comment"># Multi-seed for statistical rigor</span>
+$ python train.py \
+    algo=ppo \
+    env=sequential_futures \
+    seed=<span class="number">1,2,3</span> \
+    optim.lr=<span class="number">3e-4</span> \
+    logger=wandb</code>
+          </div>
+        </div>
+        <!-- Step 3: Deploy -->
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Deploy</h3>
+          <p>Go live on any supported broker with the same environment API.</p>
+          <div class="code-block">
+<code><span class="keyword">from</span> torchtrade.envs.live.binance <span class="keyword">import</span> (
+    <span class="function">BinanceFuturesTorchTradingEnv</span>
+)
+
+env = <span class="function">BinanceFuturesTorchTradingEnv</span>(config)
+obs = env.<span class="function">reset</span>()
+<span class="keyword">while</span> <span class="keyword">True</span>:
+    action = policy(obs)
+    obs = env.<span class="function">step</span>(action)</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Agents Marketplace ====== -->
+  <section class="section" id="agents">
+    <div class="container">
+      <div class="fade-in">
+        <div class="section-label">Claude Code Agents</div>
+        <h2 class="section-title">AI-powered trading infrastructure</h2>
+        <p class="agents-intro">
+          Specialized Claude Code agents that transform your AI assistant into a TorchTrade expert. Each agent is an optimized <code>.md</code> file packed with domain knowledge — drop it into your Claude Code setup and get instant expertise on any part of the TorchTrade pipeline.
+        </p>
+      </div>
+
+      <div class="agents-grid fade-in">
+
+        <!-- Live Executor -->
+        <div class="agent-card" data-color="blue">
+          <div class="agent-icon">&#x26A1;</div>
+          <h3>Live Executor</h3>
+          <div class="agent-filename">live-executor.md</div>
+          <p>Deploy trained policies to any supported broker. Knows APIs, error recovery, logging, paper trading, and the full path from testnet to mainnet.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">4 Brokers</span>
+            <span class="agent-tag">Spot & Futures</span>
+            <span class="agent-tag">Paper Trading</span>
+            <span class="agent-tag">Error Recovery</span>
+            <span class="agent-tag">Logging</span>
+          </div>
+          <button class="btn btn-buy" disabled>Coming Soon</button>
+        </div>
+
+        <!-- Researcher -->
+        <div class="agent-card" data-color="purple">
+          <div class="agent-icon">&#x1F52C;</div>
+          <h3>Researcher</h3>
+          <div class="agent-filename">researcher.md</div>
+          <p>Run rigorous RL experiments. Designs sweeps, enforces multi-seed methodology, configures Hydra + WandB, and generates publication-ready result plots.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">PPO/DQN/GRPO</span>
+            <span class="agent-tag">Hydra Configs</span>
+            <span class="agent-tag">Multi-Seed</span>
+            <span class="agent-tag">WandB</span>
+            <span class="agent-tag">Result Plots</span>
+          </div>
+          <button class="btn btn-buy" disabled>Coming Soon</button>
+        </div>
+
+        <!-- Environment Builder -->
+        <div class="agent-card" data-color="green">
+          <div class="agent-icon">&#x1F3D7;&#xFE0F;</div>
+          <h3>Environment Builder</h3>
+          <div class="agent-filename">environment-builder.md</div>
+          <p>Build custom trading environments from scratch. Deep knowledge of TensorDicts, transforms, reward functions, action spaces, and position management.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">TensorDict</span>
+            <span class="agent-tag">Transforms</span>
+            <span class="agent-tag">Rewards</span>
+            <span class="agent-tag">Action Spaces</span>
+            <span class="agent-tag">Multi-TF Obs</span>
+          </div>
+          <button class="btn btn-buy" disabled>Coming Soon</button>
+        </div>
+
+        <!-- Policy Analyst -->
+        <div class="agent-card" data-color="pink">
+          <div class="agent-icon">&#x1F4CA;</div>
+          <h3>Policy Analyst</h3>
+          <div class="agent-filename">policy-analyst.md</div>
+          <p>Evaluate what your trained agent actually learned. Behavioral fingerprinting, buy-and-hold detection, regime analysis, and actionable improvement recommendations.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">B&H Detection</span>
+            <span class="agent-tag">Regime Analysis</span>
+            <span class="agent-tag">Trade Metrics</span>
+            <span class="agent-tag">Diagnostics</span>
+            <span class="agent-tag">Recommendations</span>
+          </div>
+          <button class="btn btn-buy" disabled>Coming Soon</button>
+        </div>
+
+        <!-- Data Pipeline -->
+        <div class="agent-card" data-color="orange">
+          <div class="agent-icon">&#x1F504;</div>
+          <h3>Data Pipeline</h3>
+          <div class="agent-filename">data-pipeline.md</div>
+          <p>Build reliable data pipelines. Downloads OHLCV from exchanges, validates for gaps, creates HuggingFace datasets, and handles multi-timeframe alignment.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">OHLCV Data</span>
+            <span class="agent-tag">Gap Validation</span>
+            <span class="agent-tag">HuggingFace</span>
+            <span class="agent-tag">Multi-TF Align</span>
+            <span class="agent-tag">Train/Val/Test</span>
+          </div>
+          <button class="btn btn-buy" disabled>Coming Soon</button>
+        </div>
+
+        <!-- Feature Engineer -->
+        <div class="agent-card" data-color="teal">
+          <div class="agent-icon">&#x1F9EA;</div>
+          <h3>Feature Engineer</h3>
+          <div class="agent-filename">feature-engineer.md</div>
+          <p>Craft informative features for your agent. Technical indicators, Chronos embeddings, normalization strategies, and multi-timeframe feature alignment.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">Technical Indicators</span>
+            <span class="agent-tag">Chronos</span>
+            <span class="agent-tag">Normalization</span>
+            <span class="agent-tag">Feature Selection</span>
+            <span class="agent-tag">Preprocessing</span>
+          </div>
+          <button class="btn btn-buy" disabled>Coming Soon</button>
+        </div>
+
+        <!-- Network Engineer -->
+        <div class="agent-card" data-color="indigo">
+          <div class="agent-icon">&#x1F9E0;</div>
+          <h3>Network Engineer</h3>
+          <div class="agent-filename">network-engineer.md</div>
+          <p>Design neural architectures for trading. Actor-critic networks, dueling DQN, RNN policies, multi-input encoders, and TorchRL module composition.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">Actor-Critic</span>
+            <span class="agent-tag">Dueling DQN</span>
+            <span class="agent-tag">RNN Policies</span>
+            <span class="agent-tag">TorchRL Modules</span>
+            <span class="agent-tag">Exploration</span>
+          </div>
+          <button class="btn btn-buy" disabled>Coming Soon</button>
+        </div>
+
+        <!-- Full Stack Bundle -->
+        <div class="agent-card bundle" data-color="gold">
+          <div class="agent-icon">&#x1F3AF;</div>
+          <h3>Full Stack Bundle</h3>
+          <div class="agent-filename">All 7 agents + priority updates</div>
+          <p>The complete TorchTrade AI pipeline. Data, features, environments, networks, research, analysis, and live deployment — all in one package.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">All 7 Agents</span>
+            <span class="agent-tag">Priority Updates</span>
+            <span class="agent-tag">Full Pipeline</span>
+          </div>
+          <button class="btn btn-buy" disabled>Coming Soon</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Supported Brokers ====== -->
+  <section class="section" id="brokers" style="background: var(--bg-surface);">
+    <div class="container">
+      <div class="fade-in">
+        <div class="section-label">Integrations</div>
+        <h2 class="section-title">Supported brokers</h2>
+        <p class="section-subtitle">Trade stocks, crypto spot, and crypto futures with paper trading support on every broker.</p>
+      </div>
+      <div class="brokers-grid fade-in">
+        <div class="broker-card">
+          <div class="broker-logo">&#x1F1FA;&#x1F1F8;</div>
+          <h3>Alpaca</h3>
+          <div class="broker-type">Stocks &amp; Crypto Spot</div>
+          <ul class="broker-specs">
+            <li>US stocks, ETFs, crypto</li>
+            <li>Commission-free</li>
+            <li>Paper trading</li>
+            <li>Fractional shares</li>
+          </ul>
+        </div>
+        <div class="broker-card">
+          <div class="broker-logo">&#x1F7E1;</div>
+          <h3>Binance Futures</h3>
+          <div class="broker-type">Crypto Perpetual Futures</div>
+          <ul class="broker-specs">
+            <li>1-125x leverage</li>
+            <li>Isolated &amp; cross margin</li>
+            <li>Testnet support</li>
+            <li>Funding fees tracked</li>
+          </ul>
+        </div>
+        <div class="broker-card">
+          <div class="broker-logo">&#x1F535;</div>
+          <h3>Bitget Futures</h3>
+          <div class="broker-type">Crypto Perpetual Futures</div>
+          <ul class="broker-specs">
+            <li>1-125x leverage</li>
+            <li>Low fees (0.02/0.06%)</li>
+            <li>Demo trading</li>
+            <li>Copy trading ready</li>
+          </ul>
+        </div>
+        <div class="broker-card">
+          <div class="broker-logo">&#x1F7E0;</div>
+          <h3>Bybit Futures</h3>
+          <div class="broker-type">Crypto Perpetual Futures</div>
+          <ul class="broker-specs">
+            <li>1-100x leverage</li>
+            <li>Native bracket orders</li>
+            <li>Testnet support</li>
+            <li>Low latency API</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Quick Start ====== -->
+  <section class="section" id="quickstart" style="background: var(--bg-surface);">
+    <div class="container">
+      <div class="fade-in">
+        <div class="section-label">Quick Start</div>
+        <h2 class="section-title">Up and running in minutes</h2>
+      </div>
+      <div class="quickstart-block fade-in">
+        <div class="code-block">
+<code><span class="comment"># Install TorchTrade</span>
+pip install torchtrade
+
+<span class="comment"># Create an environment and run your agent</span>
+<span class="keyword">from</span> torchtrade.envs.offline <span class="keyword">import</span> <span class="function">SequentialTradingEnv</span>, <span class="function">SequentialTradingEnvConfig</span>
+<span class="keyword">import</span> pandas <span class="keyword">as</span> pd
+
+df = pd.<span class="function">read_parquet</span>(<span class="string">"btcusdt_5m.parquet"</span>)
+config = <span class="function">SequentialTradingEnvConfig</span>(
+    trading_mode=<span class="string">"futures"</span>,
+    time_frames=[<span class="string">"5min"</span>, <span class="string">"15min"</span>, <span class="string">"60min"</span>],
+    window_sizes=[<span class="number">12</span>, <span class="number">8</span>, <span class="number">24</span>],
+    leverage=<span class="number">5.0</span>,
+)
+env = <span class="function">SequentialTradingEnv</span>(df, config)
+
+td = env.<span class="function">reset</span>()
+<span class="keyword">while</span> <span class="keyword">not</span> td[<span class="string">"done"</span>]:
+    td[<span class="string">"action"</span>] = policy(td)
+    td = env.<span class="function">step</span>(td)</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Footer ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          &copy; 2025 TorchTrade. Open source under MIT License.
+        </div>
+        <div class="footer-badges">
+          <span class="badge">PyTorch</span>
+          <span class="badge">TorchRL</span>
+          <span class="badge">TensorDict</span>
+          <a href="https://github.com/TorchTrade/torchtrade" class="badge" target="_blank" rel="noopener" style="text-decoration: none; color: var(--text-secondary);">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
