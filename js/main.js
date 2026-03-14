@@ -74,6 +74,19 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// --- GitHub Stats ---
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('https://api.github.com/repos/TorchTrade/torchtrade')
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      var stars = document.getElementById('star-count');
+      var forks = document.getElementById('fork-count');
+      if (stars && data.stargazers_count != null) stars.textContent = data.stargazers_count;
+      if (forks && data.forks_count != null) forks.textContent = data.forks_count;
+    })
+    .catch(function () { /* silently fail, keep -- placeholder */ });
+});
+
 // --- Intersection Observer for fade-in animations ---
 document.addEventListener('DOMContentLoaded', function () {
   const observer = new IntersectionObserver(
