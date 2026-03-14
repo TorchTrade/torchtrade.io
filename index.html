@@ -35,6 +35,7 @@
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#agents">Agents</a></li>
         <li><a href="#research">Research</a></li>
+        <li><a href="#datasets">Datasets</a></li>
         <li><a href="#brokers">Brokers</a></li>
         <li><a href="#quickstart">Quick Start</a></li>
         <li><a href="https://torchtrade.github.io/torchtrade/" target="_blank" rel="noopener">Docs</a></li>
@@ -62,7 +63,7 @@
       <img src="assets/logo.png" alt="TorchTrade" class="hero-logo hero-logo-light">
       <h1>RL-Powered Trading.<br><span class="gradient">Research to Production.</span></h1>
       <p class="hero-subtitle">
-        Open-source framework for building, training, and deploying reinforcement learning trading agents. Multi-timeframe observations, 4 live brokers, spot &amp; futures — same code from backtest to mainnet.
+        Open-source framework for building, training, and deploying reinforcement learning trading agents. Multi-timeframe observations, 4 live brokers, spot &amp; futures, 19 free datasets on HuggingFace — same code from backtest to mainnet.
       </p>
       <div class="hero-ctas">
         <a href="https://github.com/TorchTrade/torchtrade" class="btn btn-primary" target="_blank" rel="noopener">
@@ -107,9 +108,9 @@
           <p>Built on TensorDict and TorchRL. Composable transforms, standard loss modules, and seamless integration with PPO, DQN, SAC, and more.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">&#x1F680;</div>
-          <h3>Research to Production</h3>
-          <p>Same environment code for backtesting and live trading. Train offline, validate, then deploy — no rewrite needed.</p>
+          <div class="feature-icon">&#x1F4BE;</div>
+          <h3>19 Free Datasets</h3>
+          <p>1-minute OHLCV data for BTC, ETH, SOL, and more on <a href="https://huggingface.co/Torch-Trade" target="_blank" rel="noopener">HuggingFace</a>. Spot, perpetual futures, and basis data. Validated and ready for training.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">&#x1F50D;</div>
@@ -411,6 +412,89 @@ obs = env.<span class="function">reset</span>()
     </div>
   </section>
 
+  <!-- ====== Datasets ====== -->
+  <section class="section" id="datasets">
+    <div class="container">
+      <div class="fade-in">
+        <div class="section-label">Datasets</div>
+        <h2 class="section-title">Open datasets on HuggingFace</h2>
+        <p class="section-subtitle">19 free 1-minute OHLCV datasets across major crypto pairs. Spot and perpetual futures, validated for gaps, ready for training.</p>
+      </div>
+      <div class="datasets-grid fade-in">
+
+        <div class="dataset-card">
+          <div class="dataset-pair">BTC/USDT</div>
+          <div class="dataset-tags">
+            <span class="dataset-tag spot">Spot</span>
+            <span class="dataset-tag perp">Perp</span>
+            <span class="dataset-tag basis">Basis</span>
+          </div>
+          <div class="dataset-meta">1min candles &middot; 2021&ndash;2026</div>
+        </div>
+
+        <div class="dataset-card">
+          <div class="dataset-pair">ETH/USDT</div>
+          <div class="dataset-tags">
+            <span class="dataset-tag spot">Spot</span>
+            <span class="dataset-tag perp">Perp</span>
+            <span class="dataset-tag basis">Basis</span>
+          </div>
+          <div class="dataset-meta">1min candles &middot; 2021&ndash;2026</div>
+        </div>
+
+        <div class="dataset-card">
+          <div class="dataset-pair">BNB/USDT</div>
+          <div class="dataset-tags">
+            <span class="dataset-tag perp">Perp</span>
+            <span class="dataset-tag basis">Basis</span>
+          </div>
+          <div class="dataset-meta">1min candles &middot; 2021&ndash;2026</div>
+        </div>
+
+        <div class="dataset-card">
+          <div class="dataset-pair">SOL/USDT</div>
+          <div class="dataset-tags">
+            <span class="dataset-tag spot">Spot</span>
+          </div>
+          <div class="dataset-meta">1min candles &middot; 2021&ndash;2026</div>
+        </div>
+
+        <div class="dataset-card">
+          <div class="dataset-pair">XRP/USDT</div>
+          <div class="dataset-tags">
+            <span class="dataset-tag spot">Spot</span>
+          </div>
+          <div class="dataset-meta">1min candles &middot; 2021&ndash;2026</div>
+        </div>
+
+        <div class="dataset-card">
+          <div class="dataset-pair">ADA/USDT</div>
+          <div class="dataset-tags">
+            <span class="dataset-tag spot">Spot</span>
+          </div>
+          <div class="dataset-meta">1min candles &middot; 2021&ndash;2026</div>
+        </div>
+
+        <div class="dataset-card">
+          <div class="dataset-pair">TRX/USDT</div>
+          <div class="dataset-tags">
+            <span class="dataset-tag spot">Spot</span>
+          </div>
+          <div class="dataset-meta">1min candles &middot; 2021&ndash;2026</div>
+        </div>
+
+        <div class="dataset-card dataset-more">
+          <a href="https://huggingface.co/Torch-Trade" target="_blank" rel="noopener" class="dataset-more-link">
+            +12 more
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+          </a>
+          <div class="dataset-meta">View all on HuggingFace</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ====== Supported Brokers ====== -->
   <section class="section" id="brokers" style="background: var(--bg-surface);">
     <div class="container">
@@ -421,7 +505,6 @@ obs = env.<span class="function">reset</span>()
       </div>
       <div class="brokers-grid fade-in">
         <div class="broker-card">
-          <div class="broker-logo">&#x1F1FA;&#x1F1F8;</div>
           <h3>Alpaca</h3>
           <div class="broker-type">Stocks &amp; Crypto Spot</div>
           <ul class="broker-specs">
@@ -432,7 +515,6 @@ obs = env.<span class="function">reset</span>()
           </ul>
         </div>
         <div class="broker-card">
-          <div class="broker-logo">&#x1F7E1;</div>
           <h3>Binance Futures</h3>
           <div class="broker-type">Crypto Perpetual Futures</div>
           <ul class="broker-specs">
@@ -443,7 +525,6 @@ obs = env.<span class="function">reset</span>()
           </ul>
         </div>
         <div class="broker-card">
-          <div class="broker-logo">&#x1F535;</div>
           <h3>Bitget Futures</h3>
           <div class="broker-type">Crypto Perpetual Futures</div>
           <ul class="broker-specs">
@@ -454,7 +535,6 @@ obs = env.<span class="function">reset</span>()
           </ul>
         </div>
         <div class="broker-card">
-          <div class="broker-logo">&#x1F7E0;</div>
           <h3>Bybit Futures</h3>
           <div class="broker-type">Crypto Perpetual Futures</div>
           <ul class="broker-specs">

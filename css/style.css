@@ -749,6 +749,99 @@ code, pre {
   flex: 1;
 }
 
+/* --- Datasets --- */
+.datasets-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.dataset-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  background: var(--bg-surface);
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.dataset-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.dataset-pair {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+}
+
+.dataset-tags {
+  display: flex;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-bottom: 0.6rem;
+}
+
+.dataset-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dataset-tag.spot {
+  background: rgba(52, 211, 153, 0.12);
+  color: #34d399;
+}
+
+.dataset-tag.perp {
+  background: rgba(249, 115, 22, 0.12);
+  color: #f97316;
+}
+
+.dataset-tag.basis {
+  background: rgba(167, 139, 250, 0.12);
+  color: #a78bfa;
+}
+
+.dataset-meta {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.dataset-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dataset-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.dataset-more-link:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .datasets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* --- Brokers --- */
 .brokers-grid {
   display: grid;
