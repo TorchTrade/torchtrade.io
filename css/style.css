@@ -511,6 +511,68 @@ code, pre {
   line-height: 1.6;
 }
 
+/* --- Agent Network Visualization --- */
+.agent-network {
+  margin: 3rem 0;
+  overflow-x: auto;
+}
+
+.agent-network-svg {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: block;
+  height: auto;
+}
+
+.net-line {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 1.5;
+}
+
+[data-theme="light"] .net-line {
+  stroke: rgba(0, 0, 0, 0.12);
+}
+
+.node-bg {
+  fill: var(--bg-surface);
+  stroke-width: 1.5;
+}
+
+.node-orange { stroke: var(--agent-orange); }
+.node-purple { stroke: var(--agent-purple); }
+.node-teal { stroke: var(--agent-teal); }
+.node-green { stroke: var(--agent-green); }
+.node-pink { stroke: var(--agent-pink); }
+.node-blue { stroke: var(--agent-blue); }
+.node-indigo { stroke: var(--agent-indigo); }
+.node-accent { stroke: var(--accent); fill: var(--accent-dim); }
+
+.node-label {
+  fill: var(--text-primary);
+  font-size: 11px;
+  font-weight: 500;
+  text-anchor: middle;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.node-label-bold {
+  font-weight: 700;
+}
+
+.energy-dot {
+  opacity: 0.9;
+}
+
+.dot-orange { fill: var(--agent-orange); }
+.dot-purple { fill: var(--agent-purple); }
+.dot-teal { fill: var(--agent-teal); }
+.dot-green { fill: var(--agent-green); }
+.dot-pink { fill: var(--agent-pink); }
+.dot-blue { fill: var(--agent-blue); }
+.dot-indigo { fill: var(--agent-indigo); }
+
 .agents-disclaimer {
   font-size: 0.8rem;
   color: var(--text-tertiary);
