@@ -63,7 +63,7 @@
       <img src="assets/logo.png" alt="TorchTrade" class="hero-logo hero-logo-light">
       <h1>RL-Powered Trading.<br><span class="gradient">Research to Production.</span></h1>
       <p class="hero-subtitle">
-        Open-source framework for building, training, and deploying reinforcement learning trading agents. Multi-timeframe observations, 4 live brokers, spot &amp; futures, 19 free datasets on HuggingFace — same code from backtest to mainnet.
+        Open-source framework for building, training, and deploying machine learning based trading agents. Multi-timeframe observations, 4 live brokers, spot &amp; futures, 19 free datasets on <a href="https://huggingface.co/Torch-Trade" target="_blank" rel="noopener">HuggingFace</a>. Same code for training/backtesting and live execution.
       </p>
       <div class="hero-ctas">
         <a href="https://github.com/TorchTrade/torchtrade" class="btn btn-primary" target="_blank" rel="noopener">
@@ -133,7 +133,7 @@
         <div class="step">
           <div class="step-number">1</div>
           <h3>Research</h3>
-          <p>Backtest strategies on historical data with offline environments.</p>
+          <p>Backtest strategies on historical data with offline environments. We provide <a href="https://huggingface.co/Torch-Trade" target="_blank" rel="noopener">free datasets</a> to get started.</p>
           <div class="code-block">
 <code><span class="keyword">from</span> torchtrade.envs.offline <span class="keyword">import</span> <span class="function">SequentialTradingEnv</span>
 <span class="keyword">from</span> torchtrade.envs.offline <span class="keyword">import</span> <span class="function">SequentialTradingEnvConfig</span>
@@ -150,7 +150,7 @@ env = <span class="function">SequentialTradingEnv</span>(df, config)</code>
         <div class="step">
           <div class="step-number">2</div>
           <h3>Train</h3>
-          <p>Train RL agents with PPO, DQN, GRPO, or your own algorithm.</p>
+          <p>Train with PPO, DQN, GRPO, or any <a href="https://github.com/pytorch/rl" target="_blank" rel="noopener">TorchRL</a> algorithm out of the box. Or develop your own custom algorithm.</p>
           <div class="code-block">
 <code><span class="comment"># Hydra config-driven training</span>
 <span class="comment"># Multi-seed for statistical rigor</span>
@@ -423,7 +423,7 @@ obs = env.<span class="function">reset</span>()
       <div class="fade-in">
         <div class="section-label">Research</div>
         <h2 class="section-title">Deep-dives & experiment reports</h2>
-        <p class="section-subtitle">We run RL trading experiments and write up everything we learn. Specific hyperparameters, training curves, failure modes, reward shaping decisions, and regime analysis from real runs. Each article includes the full experiment config and our interpretation of the results.</p>
+        <p class="section-subtitle">Articles and research reports with practical insights from experiments. Specific hyperparameters, training curves, failure modes, reward shaping decisions, and regime analysis from real runs. Each article includes the full experiment config and our interpretation of the results.</p>
       </div>
       <div class="research-grid fade-in">
 
@@ -674,12 +674,12 @@ td = env.<span class="function">reset</span>()
     <div class="container">
       <div class="footer-inner">
         <div class="footer-left">
-          &copy; 2025 TorchTrade. Open source under MIT License.
+          &copy; 2026 TorchTrade. Open source under MIT License.
         </div>
         <div class="footer-badges">
-          <span class="badge">PyTorch</span>
-          <span class="badge">TorchRL</span>
-          <span class="badge">TensorDict</span>
+          <a href="https://github.com/pytorch/pytorch" class="badge" target="_blank" rel="noopener" style="text-decoration: none; color: var(--text-secondary);">PyTorch</a>
+          <a href="https://github.com/pytorch/rl" class="badge" target="_blank" rel="noopener" style="text-decoration: none; color: var(--text-secondary);">TorchRL</a>
+          <a href="https://github.com/pytorch/tensordict" class="badge" target="_blank" rel="noopener" style="text-decoration: none; color: var(--text-secondary);">TensorDict</a>
           <a href="https://github.com/TorchTrade/torchtrade" class="badge" target="_blank" rel="noopener" style="text-decoration: none; color: var(--text-secondary);">GitHub</a>
         </div>
       </div>
