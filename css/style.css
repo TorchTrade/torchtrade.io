@@ -591,10 +591,11 @@ code, pre {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.5rem;
-  background: var(--bg-surface);
-  transition: all 0.3s;
+  background-color: var(--bg-surface);
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
+  -webkit-appearance: none;
 }
 
 .agent-card:hover {
@@ -1154,5 +1155,14 @@ code, pre {
   }
   .agents-grid {
     grid-template-columns: 1fr;
+  }
+  /* Disable hover effects on touch devices */
+  .agent-card:hover,
+  .feature-card:hover,
+  .research-card:hover,
+  .broker-card:hover,
+  .dataset-card:hover {
+    transform: none;
+    box-shadow: none;
   }
 }
