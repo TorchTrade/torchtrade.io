@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — TorchTrade</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo-dark.png" alt="TorchTrade" class="nav-logo-img nav-logo-dark">
+        <img src="assets/logo.png" alt="TorchTrade" class="nav-logo-img nav-logo-light">
+      </a>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top: 8rem;">
+    <div class="container" style="max-width: 900px;">
+      <h1 class="section-title">Pricing</h1>
+      <p style="color: var(--text-secondary); margin-bottom: 3rem;">Claude Code agents and research articles for TorchTrade.</p>
+
+      <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Claude Code Agents</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 2rem;">Each agent is a specialized <code>.md</code> file that gives Claude Code deep domain knowledge about a specific part of the TorchTrade pipeline. Drop it into your Claude Code setup for instant expertise.</p>
+
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--border);">
+              <th style="text-align: left; padding: 0.75rem; color: var(--text-primary);">Agent</th>
+              <th style="text-align: left; padding: 0.75rem; color: var(--text-primary);">What It Does</th>
+              <th style="text-align: right; padding: 0.75rem; color: var(--text-primary);">Price</th>
+            </tr>
+          </thead>
+          <tbody style="color: var(--text-secondary);">
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 0.75rem; font-weight: 600; color: var(--agent-blue);">Live Executor</td>
+              <td style="padding: 0.75rem;">Deploy trained policies to Alpaca, Binance, Bitget, or Bybit. Testnet setup, error handling, logging, checkpoint hot-reload.</td>
+              <td style="padding: 0.75rem; text-align: right; white-space: nowrap;">Coming Soon</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 0.75rem; font-weight: 600; color: var(--agent-purple);">Researcher</td>
+              <td style="padding: 0.75rem;">Design and run RL experiments. Hydra configs, multi-seed methodology, WandB logging, result analysis and plots.</td>
+              <td style="padding: 0.75rem; text-align: right; white-space: nowrap;">Coming Soon</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 0.75rem; font-weight: 600; color: var(--agent-green);">Environment Builder</td>
+              <td style="padding: 0.75rem;">Build custom trading environments. Observations, rewards, action spaces, position management, SLTP bracket orders.</td>
+              <td style="padding: 0.75rem; text-align: right; white-space: nowrap;">Coming Soon</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 0.75rem; font-weight: 600; color: var(--agent-pink);">Policy Analyst</td>
+              <td style="padding: 0.75rem;">Evaluate trained policies. Behavioral fingerprinting, buy-and-hold detection, regime analysis, trade-level metrics.</td>
+              <td style="padding: 0.75rem; text-align: right; white-space: nowrap;">Coming Soon</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 0.75rem; font-weight: 600; color: var(--agent-orange);">Data Pipeline</td>
+              <td style="padding: 0.75rem;">Download OHLCV data from Binance, validate for gaps, create HuggingFace datasets, train/val/test splits.</td>
+              <td style="padding: 0.75rem; text-align: right; white-space: nowrap;">Coming Soon</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 0.75rem; font-weight: 600; color: var(--agent-teal);">Feature Engineer</td>
+              <td style="padding: 0.75rem;">Build observation features. Technical indicators, Chronos embeddings, normalization, multi-timeframe alignment.</td>
+              <td style="padding: 0.75rem; text-align: right; white-space: nowrap;">Coming Soon</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 0.75rem; font-weight: 600; color: var(--agent-indigo);">Network Engineer</td>
+              <td style="padding: 0.75rem;">Design model architectures. Actor-critic, DQN, multi-timeframe encoders, TorchRL module composition.</td>
+              <td style="padding: 0.75rem; text-align: right; white-space: nowrap;">Coming Soon</td>
+            </tr>
+            <tr style="border-bottom: 2px solid var(--border); background: var(--accent-dim);">
+              <td style="padding: 0.75rem; font-weight: 700; color: var(--agent-gold);">Full Stack Bundle</td>
+              <td style="padding: 0.75rem; font-weight: 500;">All 7 agents + priority updates. The complete TorchTrade AI pipeline.</td>
+              <td style="padding: 0.75rem; text-align: right; white-space: nowrap; font-weight: 700;">Coming Soon</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="color: var(--text-tertiary); font-size: 0.8rem; margin-top: 1rem; font-style: italic;">Prices will be announced when agents launch. All payments processed securely via Paddle.</p>
+
+      <h2 style="font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1.5rem;">Research Articles</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 1rem;">In-depth experiment reports with specific hyperparameters, training curves, failure modes, and regime analysis from real RL trading runs.</p>
+      <p style="color: var(--text-secondary); margin-bottom: 1rem;"><strong style="color: var(--text-primary);">Per article:</strong> Coming Soon</p>
+      <p style="color: var(--text-tertiary); font-size: 0.8rem; font-style: italic;">Each article is a one-time purchase. Delivered as a digital download.</p>
+
+      <h2 style="font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1.5rem;">What You Get</h2>
+      <ul style="color: var(--text-secondary); line-height: 2; font-size: 0.95rem;">
+        <li>Digital download delivered instantly after purchase</li>
+        <li>Agent files are <code>.md</code> files you drop into your Claude Code setup</li>
+        <li>Each agent contains deep domain knowledge, code examples, and file references</li>
+        <li>Agents know how to read TorchTrade documentation and source code at runtime</li>
+        <li>Personal, non-transferable license for single user</li>
+      </ul>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">&copy; 2026 TorchTrade.</div>
+        <div class="footer-badges">
+          <a href="terms.html" style="text-decoration: none; color: var(--text-secondary); font-size: 0.8rem;">Terms</a>
+          <a href="privacy.html" style="text-decoration: none; color: var(--text-secondary); font-size: 0.8rem;">Privacy</a>
+          <a href="refund.html" style="text-decoration: none; color: var(--text-secondary); font-size: 0.8rem;">Refund Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
