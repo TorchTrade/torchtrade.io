@@ -300,7 +300,7 @@ obs = env.<span class="function">reset</span>()
             <span class="agent-tag">Error Recovery</span>
             <span class="agent-tag">Logging</span>
           </div>
-          <button class="btn btn-buy" disabled>Coming Soon</button>
+          <button class="btn btn-buy" onclick="showModal('agent')">Coming Soon</button>
         </div>
 
         <!-- Researcher -->
@@ -316,7 +316,7 @@ obs = env.<span class="function">reset</span>()
             <span class="agent-tag">WandB</span>
             <span class="agent-tag">Result Plots</span>
           </div>
-          <button class="btn btn-buy" disabled>Coming Soon</button>
+          <button class="btn btn-buy" onclick="showModal('agent')">Coming Soon</button>
         </div>
 
         <!-- Environment Builder -->
@@ -332,7 +332,7 @@ obs = env.<span class="function">reset</span>()
             <span class="agent-tag">Action Spaces</span>
             <span class="agent-tag">Multi-TF Obs</span>
           </div>
-          <button class="btn btn-buy" disabled>Coming Soon</button>
+          <button class="btn btn-buy" onclick="showModal('agent')">Coming Soon</button>
         </div>
 
         <!-- Policy Analyst -->
@@ -348,7 +348,7 @@ obs = env.<span class="function">reset</span>()
             <span class="agent-tag">Diagnostics</span>
             <span class="agent-tag">Recommendations</span>
           </div>
-          <button class="btn btn-buy" disabled>Coming Soon</button>
+          <button class="btn btn-buy" onclick="showModal('agent')">Coming Soon</button>
         </div>
 
         <!-- Data Pipeline -->
@@ -364,7 +364,7 @@ obs = env.<span class="function">reset</span>()
             <span class="agent-tag">Multi-TF Align</span>
             <span class="agent-tag">Train/Val/Test</span>
           </div>
-          <button class="btn btn-buy" disabled>Coming Soon</button>
+          <button class="btn btn-buy" onclick="showModal('agent')">Coming Soon</button>
         </div>
 
         <!-- Feature Engineer -->
@@ -380,7 +380,7 @@ obs = env.<span class="function">reset</span>()
             <span class="agent-tag">Feature Selection</span>
             <span class="agent-tag">Preprocessing</span>
           </div>
-          <button class="btn btn-buy" disabled>Coming Soon</button>
+          <button class="btn btn-buy" onclick="showModal('agent')">Coming Soon</button>
         </div>
 
         <!-- Network Engineer -->
@@ -396,7 +396,7 @@ obs = env.<span class="function">reset</span>()
             <span class="agent-tag">TorchRL Modules</span>
             <span class="agent-tag">Exploration</span>
           </div>
-          <button class="btn btn-buy" disabled>Coming Soon</button>
+          <button class="btn btn-buy" onclick="showModal('agent')">Coming Soon</button>
         </div>
 
         <!-- Full Stack Bundle -->
@@ -410,7 +410,7 @@ obs = env.<span class="function">reset</span>()
             <span class="agent-tag">Priority Updates</span>
             <span class="agent-tag">Full Pipeline</span>
           </div>
-          <button class="btn btn-buy" disabled>Coming Soon</button>
+          <button class="btn btn-buy" onclick="showModal('agent')">Coming Soon</button>
         </div>
 
       </div>
@@ -439,7 +439,7 @@ obs = env.<span class="function">reset</span>()
             <h3>TorchTrade: RL Meets Live Trading</h3>
             <p>Architecture overview, universal account state, environment hierarchy, and the path from research to production.</p>
             <div class="research-footer">
-              <button class="btn btn-buy" disabled>Read Article</button>
+              <button class="btn btn-buy" onclick="showModal('article')">Read Article</button>
             </div>
           </div>
         </div>
@@ -456,7 +456,7 @@ obs = env.<span class="function">reset</span>()
             <h3>DQN with Bracket Orders (SL/TP)</h3>
             <p>Training DQN agents with stop-loss and take-profit bracket orders. Combinatorial action spaces and risk management.</p>
             <div class="research-footer">
-              <button class="btn btn-buy" disabled>Read Article</button>
+              <button class="btn btn-buy" onclick="showModal('article')">Read Article</button>
             </div>
           </div>
         </div>
@@ -473,7 +473,7 @@ obs = env.<span class="function">reset</span>()
             <h3>GPT-5 Trades BTC for a Week</h3>
             <p>Can a frontier LLM beat RL agents at live crypto trading? A week-long experiment with real money and real results.</p>
             <div class="research-footer">
-              <button class="btn btn-buy" disabled>Read Article</button>
+              <button class="btn btn-buy" onclick="showModal('article')">Read Article</button>
             </div>
           </div>
         </div>
@@ -490,7 +490,7 @@ obs = env.<span class="function">reset</span>()
             <h3>CTRL Loss: Zero-Shot Asset Transfer</h3>
             <p>Train on BTC, deploy on ETH. Contrastive representation learning for cross-asset transfer without retraining.</p>
             <div class="research-footer">
-              <button class="btn btn-buy" disabled>Read Article</button>
+              <button class="btn btn-buy" onclick="showModal('article')">Read Article</button>
             </div>
           </div>
         </div>
@@ -687,6 +687,15 @@ td = env.<span class="function">reset</span>()
       </div>
     </div>
   </footer>
+
+  <!-- Coming Soon Modal -->
+  <div class="modal-overlay" id="coming-soon-modal">
+    <div class="modal">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <h3 id="modal-title">Coming Soon</h3>
+      <p id="modal-text">This feature is currently in development. Stay tuned for updates.</p>
+    </div>
+  </div>
 
 </body>
 </html>

@@ -105,3 +105,45 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(el);
   });
 });
+
+// --- Coming Soon Modal ---
+function showModal(type) {
+  var modal = document.getElementById('coming-soon-modal');
+  var title = document.getElementById('modal-title');
+  var text = document.getElementById('modal-text');
+
+  if (type === 'agent') {
+    title.textContent = 'Agents Coming Soon';
+    text.textContent = 'Our Claude Code agents are currently in development and will be available for purchase shortly. Follow us on GitHub to get notified when they launch.';
+  } else if (type === 'article') {
+    title.textContent = 'Research Coming Soon';
+    text.textContent = 'Our research articles and experiment reports are currently being written. Follow us on GitHub to get notified when the first articles are published.';
+  }
+
+  modal.classList.add('active');
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var modal = document.getElementById('coming-soon-modal');
+  var closeBtn = document.getElementById('modal-close');
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      modal.classList.remove('active');
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
