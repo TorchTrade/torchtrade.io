@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://torchtrade.io">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="TorchTrade — RL-Powered Trading">
-  <meta name="twitter:description" content="From research to production. Multi-timeframe observations, 4 live brokers, spot & futures.">
+  <meta name="twitter:description" content="From research to production. Multi-timeframe observations, live brokers and prediction markets, spot & futures.">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js"></script>
   <!-- Fade-in animation styles -->
@@ -63,7 +63,7 @@
       <img src="assets/logo.png" alt="TorchTrade" class="hero-logo hero-logo-light">
       <h1>RL-Powered Trading.<br><span class="gradient">Research to Production.</span></h1>
       <p class="hero-subtitle">
-        Open-source framework for building, training, and deploying machine learning based trading agents. Multi-timeframe observations, 4 live brokers, spot &amp; futures, 19 free datasets on <a href="https://huggingface.co/Torch-Trade" target="_blank" rel="noopener">HuggingFace</a>. Same code for training/backtesting and live execution.
+        Open-source framework for building, training, and deploying machine learning based trading agents. Multi-timeframe observations, live brokers and prediction markets, spot &amp; futures, 19 free datasets on <a href="https://huggingface.co/Torch-Trade" target="_blank" rel="noopener">HuggingFace</a>. Same code for training/backtesting and live execution.
       </p>
       <div class="hero-ctas">
         <a href="https://github.com/TorchTrade/torchtrade" class="btn btn-primary" target="_blank" rel="noopener">
@@ -74,6 +74,42 @@
           Browse Agents
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Brokers Strip (auto-scrolling logos, brand colors) ====== -->
+  <section class="brokers-strip">
+    <div class="container">
+      <p class="brokers-strip-heading">Supported brokers and prediction markets</p>
+
+      <!-- Hidden SVG <symbol> defs — referenced by all marquee items via <use> -->
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="brand-alpaca" viewBox="0 0 378 378"><path d="M189 378C293.382 378 378 293.382 378 189C378 84.6182 293.382 0 189 0C84.6182 0 0 84.6182 0 189C0 293.382 84.6182 378 189 378Z" fill="currentColor"/><mask id="mask0_204_7018" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="379" height="378"><path d="M189 378C293.382 378 378 293.382 378 189C378 84.6182 293.382 0 189 0C84.6185 0 0.000366211 84.6182 0.000366211 189C0.000366211 293.382 84.6185 378 189 378Z" fill="#ffffff"/></mask><g mask="url(#mask0_204_7018)"><path d="M261.969 357.639C259.185 357.639 256.514 356.533 254.545 354.564C252.576 352.595 251.469 349.924 251.469 347.139V157.089C251.473 148.025 249.216 139.103 244.904 131.13C240.592 123.158 234.361 116.386 226.773 111.427C229.107 107.607 230.381 103.234 230.465 98.7584C230.548 94.2827 229.437 89.8656 227.247 85.9613C225.058 82.057 221.867 78.8066 218.004 76.5443C214.142 74.282 209.746 73.0894 205.269 73.0894V94.0894H204.917C203.924 88.2174 200.884 82.8867 196.336 79.0426C191.787 75.1985 186.025 73.0894 180.069 73.0894V102.489H171.669V102.54C159.235 103.079 147.489 108.398 138.881 117.388C130.273 126.377 125.469 138.343 125.469 150.789C125.469 150.865 125.469 150.941 125.469 151.016L97.2202 169.278C99.1196 181.11 105.173 191.878 114.294 199.65C123.415 207.423 133.327 211.691 145.31 211.689C145.772 211.689 146.217 211.689 146.671 211.689L129.669 390.609L250.419 399.009L256.719 383.259L377.411 379.059V357.639H261.969Z" fill="#000"/><path d="M152.247 159.714C152.25 158.184 152.858 156.717 153.94 155.635C155.022 154.553 156.488 153.944 158.018 153.942H174.818C174.818 157.006 173.602 159.944 171.435 162.111C169.269 164.277 166.332 165.494 163.268 165.494H151.718L152.247 159.714Z" fill="#000"/></g></symbol>
+        <symbol id="brand-binance" viewBox="0 0 24 24"><path fill="currentColor" d="M16.624 13.9202l2.7175 2.7154-7.353 7.353-7.353-7.352 2.7175-2.7164 4.6355 4.6595 4.6356-4.6595zm4.6366-4.6366L24 12l-2.7154 2.7164L18.5682 12l2.6924-2.7164zm-9.272.001l2.7163 2.6914-2.7164 2.7174v-.001L9.2721 12l2.7164-2.7154zm-9.2722-.001L5.4088 12l-2.6914 2.6924L0 12l2.7164-2.7164zM11.9885.0115l7.353 7.329-2.7174 2.7154-4.6356-4.6356-4.6355 4.6595-2.7174-2.7154 7.353-7.353z"/></symbol>
+        <symbol id="brand-bitget" viewBox="0 0 220 60"><text x="110" y="46" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="48" font-weight="700" fill="currentColor" text-anchor="middle" letter-spacing="-1.5">Bitget</text></symbol>
+        <symbol id="brand-bybit" viewBox="0 0 200 60"><text x="100" y="46" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="48" font-weight="800" fill="currentColor" text-anchor="middle" letter-spacing="-2">bybit</text></symbol>
+        <symbol id="brand-okx" viewBox="0 0 24 24"><path fill="currentColor" d="M 7.15 8.685 C 7.18 8.705 7.2 8.745 7.2 8.785 L 7.2 15.225 C 7.2 15.265 7.18 15.305 7.15 15.325 C 7.121 15.355 7.082 15.372 7.04 15.375 L 0.16 15.375 C 0.118 15.372 0.079 15.355 0.05 15.325 C 0.02 15.3 0.002 15.264 0 15.225 L 0 8.785 C 0 8.745 0.02 8.705 0.05 8.685 C 0.079 8.655 0.118 8.638 0.16 8.635 L 7.04 8.635 C 7.08 8.635 7.12 8.655 7.15 8.685 Z M 4.8 11.035 C 4.798 10.996 4.78 10.96 4.75 10.935 C 4.721 10.905 4.682 10.887 4.64 10.885 L 2.56 10.885 C 2.52 10.885 2.481 10.899 2.45 10.925 C 2.42 10.95 2.402 10.986 2.4 11.025 L 2.4 12.975 C 2.4 13.015 2.42 13.055 2.45 13.075 C 2.48 13.115 2.52 13.125 2.56 13.125 L 4.64 13.125 C 4.68 13.125 4.72 13.115 4.75 13.085 C 4.78 13.06 4.798 13.024 4.8 12.985 L 4.8 11.035 Z M 21.6 11.035 L 21.6 12.975 C 21.6 13.065 21.53 13.125 21.44 13.125 L 19.36 13.125 C 19.27 13.125 19.2 13.065 19.2 12.975 L 19.2 11.035 C 19.2 10.955 19.27 10.885 19.36 10.885 L 21.44 10.885 C 21.53 10.885 21.6 10.945 21.6 11.035 Z M 19.2 8.785 L 19.2 10.735 C 19.2 10.815 19.13 10.885 19.04 10.885 L 16.96 10.885 C 16.87 10.885 16.8 10.815 16.8 10.735 L 16.8 8.785 C 16.8 8.705 16.87 8.635 16.96 8.635 L 19.04 8.635 C 19.13 8.635 19.2 8.705 19.2 8.785 Z M 24 8.785 L 24 10.735 C 24 10.815 23.93 10.885 23.84 10.885 L 21.76 10.885 C 21.67 10.885 21.6 10.815 21.6 10.735 L 21.6 8.785 C 21.6 8.705 21.67 8.635 21.76 8.635 L 23.84 8.635 C 23.93 8.635 24 8.705 24 8.785 Z M 19.2 13.285 L 19.2 15.225 C 19.2 15.305 19.13 15.375 19.04 15.375 L 16.96 15.375 C 16.87 15.375 16.8 15.305 16.8 15.225 L 16.8 13.275 C 16.8 13.195 16.87 13.125 16.96 13.125 L 19.04 13.125 C 19.13 13.125 19.2 13.195 19.2 13.275 L 19.2 13.285 Z M 24 13.285 L 24 15.225 C 24 15.305 23.93 15.375 23.84 15.375 L 21.76 15.375 C 21.67 15.375 21.6 15.305 21.6 15.225 L 21.6 13.275 C 21.6 13.195 21.67 13.125 21.76 13.125 L 23.84 13.125 C 23.93 13.125 24 13.195 24 13.275 L 24 13.285 Z M 15.6 8.785 L 15.6 10.735 C 15.6 10.815 15.53 10.885 15.44 10.885 L 13.36 10.885 C 13.27 10.885 13.2 10.815 13.2 10.735 L 13.2 8.785 C 13.2 8.705 13.27 8.635 13.36 8.635 L 15.44 8.635 C 15.53 8.635 15.6 8.705 15.6 8.785 Z M 15.6 13.285 L 15.6 15.225 C 15.6 15.305 15.53 15.375 15.44 15.375 L 13.36 15.375 C 13.27 15.375 13.2 15.305 13.2 15.225 L 13.2 13.275 C 13.2 13.195 13.27 13.125 13.36 13.125 L 15.44 13.125 C 15.53 13.125 15.6 13.195 15.6 13.275 L 15.6 13.285 Z M 13.2 12.985 C 13.195 13.069 13.125 13.135 13.04 13.135 L 10.8 13.135 L 10.8 15.215 C 10.8 15.255 10.78 15.295 10.75 15.325 C 10.719 15.351 10.68 15.365 10.64 15.365 L 8.56 15.365 C 8.516 15.368 8.473 15.353 8.44 15.325 C 8.414 15.298 8.399 15.262 8.4 15.225 L 8.4 8.775 C 8.4 8.735 8.41 8.695 8.44 8.675 C 8.472 8.643 8.515 8.625 8.56 8.625 L 10.64 8.625 C 10.68 8.625 10.72 8.645 10.75 8.675 C 10.78 8.695 10.8 8.735 10.8 8.775 L 10.8 10.875 L 13.04 10.875 C 13.08 10.875 13.12 10.885 13.15 10.915 C 13.18 10.945 13.2 10.985 13.2 11.015 L 13.2 12.965 L 13.2 12.985 Z"/></symbol>
+        <symbol id="brand-polymarket" viewBox="0 0 2184 2184"><g transform="translate(0,2184) scale(0.1,-0.1)" fill="currentColor" stroke="none"><path d="M10445 15709 c-2667 -764 -4860 -1391 -4872 -1394 l-23 -5 0 -3345 0 -3344 23 -7 c79 -25 9722 -2782 9724 -2780 2 1 2 2761 1 6133 l-3 6129 -4850 -1387z m3915 -1910 c0 -1939 -1 -2041 -17 -2037 -160 43 -7100 2032 -7105 2037 -7 6 7068 2037 7105 2040 16 1 17 -102 17 -2040z m-4263 -1806 c1976 -565 3591 -1028 3590 -1029 -4 -4 -7141 -2045 -7169 -2051 l-28 -5 0 2056 c0 1131 3 2056 8 2056 4 0 1623 -462 3599 -1027z m4263 -3864 l0 -2041 -27 5 c-16 3 -1617 460 -3560 1016 -1942 556 -3535 1011 -3539 1011 -4 0 -4 3 0 7 5 6 7095 2040 7119 2042 4 1 7 -918 7 -2040z"/></g></symbol>
+      </svg>
+
+      <div class="brokers-marquee brokers-marquee--color" aria-label="Supported brokers">
+        <div class="brokers-marquee-track">
+          <!-- Set 1 -->
+          <div class="broker-logo-item" data-broker="alpaca" role="img" aria-label="Alpaca"><svg class="broker-logo-mark" style="--logo-w: 40px" viewBox="0 0 378 378"><use href="#brand-alpaca"/></svg><span>Alpaca</span></div>
+          <div class="broker-logo-item" data-broker="binance" role="img" aria-label="Binance"><svg class="broker-logo-mark" style="--logo-w: 40px" viewBox="0 0 24 24"><use href="#brand-binance"/></svg><span>Binance</span></div>
+          <div class="broker-logo-item" data-broker="bitget" role="img" aria-label="Bitget"><svg class="broker-logo-mark" style="--logo-w: 130px" viewBox="0 0 220 60"><use href="#brand-bitget"/></svg><span>Bitget</span></div>
+          <div class="broker-logo-item" data-broker="bybit" role="img" aria-label="Bybit"><svg class="broker-logo-mark" style="--logo-w: 120px" viewBox="0 0 200 60"><use href="#brand-bybit"/></svg><span>Bybit</span></div>
+          <div class="broker-logo-item" data-broker="okx" role="img" aria-label="OKX"><svg class="broker-logo-mark" style="--logo-w: 40px" viewBox="0 0 24 24"><use href="#brand-okx"/></svg><span>OKX</span></div>
+          <div class="broker-logo-item" data-broker="polymarket" role="img" aria-label="Polymarket"><svg class="broker-logo-mark" style="--logo-w: 40px" viewBox="0 0 2184 2184"><use href="#brand-polymarket"/></svg><span>Polymarket</span></div>
+          <!-- Set 2 (duplicate for seamless loop) -->
+          <div class="broker-logo-item" data-broker="alpaca" aria-hidden="true"><svg class="broker-logo-mark" style="--logo-w: 40px" viewBox="0 0 378 378"><use href="#brand-alpaca"/></svg><span>Alpaca</span></div>
+          <div class="broker-logo-item" data-broker="binance" aria-hidden="true"><svg class="broker-logo-mark" style="--logo-w: 40px" viewBox="0 0 24 24"><use href="#brand-binance"/></svg><span>Binance</span></div>
+          <div class="broker-logo-item" data-broker="bitget" aria-hidden="true"><svg class="broker-logo-mark" style="--logo-w: 130px" viewBox="0 0 220 60"><use href="#brand-bitget"/></svg><span>Bitget</span></div>
+          <div class="broker-logo-item" data-broker="bybit" aria-hidden="true"><svg class="broker-logo-mark" style="--logo-w: 120px" viewBox="0 0 200 60"><use href="#brand-bybit"/></svg><span>Bybit</span></div>
+          <div class="broker-logo-item" data-broker="okx" aria-hidden="true"><svg class="broker-logo-mark" style="--logo-w: 40px" viewBox="0 0 24 24"><use href="#brand-okx"/></svg><span>OKX</span></div>
+          <div class="broker-logo-item" data-broker="polymarket" aria-hidden="true"><svg class="broker-logo-mark" style="--logo-w: 40px" viewBox="0 0 2184 2184"><use href="#brand-polymarket"/></svg><span>Polymarket</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -94,8 +130,8 @@
         </div>
         <div class="feature-card">
           <div class="feature-icon">&#x1F310;</div>
-          <h3>4 Live Brokers</h3>
-          <p>Deploy to Alpaca (US stocks &amp; crypto), Binance Futures, Bitget Futures, or Bybit Futures. Paper trading included.</p>
+          <h3>Live Brokers &amp; Prediction Markets</h3>
+          <p>Deploy to Alpaca (US stocks &amp; crypto), Binance, Bitget, Bybit, OKX, or Polymarket prediction markets. Paper trading included.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">&#x1F4B9;</div>
@@ -587,11 +623,14 @@ obs = env.<span class="function">reset</span>()
     <div class="container">
       <div class="fade-in">
         <div class="section-label">Integrations</div>
-        <h2 class="section-title">Supported brokers</h2>
-        <p class="section-subtitle">Trade stocks, crypto spot, and crypto futures with paper trading support on every broker.</p>
+        <h2 class="section-title">Supported brokers &amp; markets</h2>
+        <p class="section-subtitle">Trade stocks, crypto spot, crypto futures, and prediction markets with paper trading support on every venue.</p>
       </div>
+
+
       <div class="brokers-grid fade-in">
-        <div class="broker-card">
+        <div class="broker-card" data-broker="alpaca">
+          <svg class="broker-card-logo" viewBox="0 0 378 378" aria-hidden="true"><use href="#brand-alpaca"/></svg>
           <h3>Alpaca</h3>
           <div class="broker-type">Stocks &amp; Crypto Spot</div>
           <ul class="broker-specs">
@@ -601,7 +640,8 @@ obs = env.<span class="function">reset</span>()
             <li>Fractional shares</li>
           </ul>
         </div>
-        <div class="broker-card">
+        <div class="broker-card" data-broker="binance">
+          <svg class="broker-card-logo" viewBox="0 0 24 24" aria-hidden="true"><use href="#brand-binance"/></svg>
           <h3>Binance</h3>
           <div class="broker-type">Spot &amp; Futures</div>
           <ul class="broker-specs">
@@ -611,7 +651,8 @@ obs = env.<span class="function">reset</span>()
             <li>Funding fees tracked</li>
           </ul>
         </div>
-        <div class="broker-card">
+        <div class="broker-card" data-broker="bitget">
+          <svg class="broker-card-logo broker-card-logo--wordmark" viewBox="0 0 220 60" aria-hidden="true"><use href="#brand-bitget"/></svg>
           <h3>Bitget</h3>
           <div class="broker-type">Spot &amp; Futures</div>
           <ul class="broker-specs">
@@ -621,7 +662,8 @@ obs = env.<span class="function">reset</span>()
             <li>Copy trading ready</li>
           </ul>
         </div>
-        <div class="broker-card">
+        <div class="broker-card" data-broker="bybit">
+          <svg class="broker-card-logo broker-card-logo--wordmark" viewBox="0 0 200 60" aria-hidden="true"><use href="#brand-bybit"/></svg>
           <h3>Bybit</h3>
           <div class="broker-type">Spot &amp; Futures</div>
           <ul class="broker-specs">
@@ -629,6 +671,28 @@ obs = env.<span class="function">reset</span>()
             <li>Native bracket orders</li>
             <li>Testnet support</li>
             <li>Low latency API</li>
+          </ul>
+        </div>
+        <div class="broker-card" data-broker="okx">
+          <svg class="broker-card-logo" viewBox="0 0 24 24" aria-hidden="true"><use href="#brand-okx"/></svg>
+          <h3>OKX</h3>
+          <div class="broker-type">Spot &amp; Futures</div>
+          <ul class="broker-specs">
+            <li>1-125x leverage</li>
+            <li>Deep liquidity</li>
+            <li>Demo trading</li>
+            <li>Unified account</li>
+          </ul>
+        </div>
+        <div class="broker-card" data-broker="polymarket">
+          <svg class="broker-card-logo" viewBox="0 0 2184 2184" aria-hidden="true"><use href="#brand-polymarket"/></svg>
+          <h3>Polymarket</h3>
+          <div class="broker-type">Prediction Markets</div>
+          <ul class="broker-specs">
+            <li>Binary YES/NO contracts</li>
+            <li>Politics, sports, crypto</li>
+            <li>On-chain settlement</li>
+            <li>USDC collateral</li>
           </ul>
         </div>
       </div>

@@ -913,10 +913,118 @@ code, pre {
   }
 }
 
+/* --- Brokers Marquee --- */
+.brokers-marquee {
+  position: relative;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  /* Soft fade on both edges so logos appear/disappear smoothly */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+
+.brokers-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  width: max-content;
+  animation: scroll-brokers 35s linear infinite;
+}
+
+.brokers-marquee:hover .brokers-marquee-track {
+  animation-play-state: paused;
+}
+
+.broker-logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  transition: color 0.25s ease, transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.broker-logo-item:hover {
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.broker-logo-mark {
+  display: block;
+  height: 40px;
+  width: var(--logo-w, 40px);
+  fill: currentColor;
+  color: inherit;
+  transition: color 0.25s ease;
+  overflow: visible;
+}
+
+.broker-logo-item span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@keyframes scroll-brokers {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* --- Brokers Marquee: colored variant (brand colors) --- */
+/* Inline SVGs inherit color via currentColor; we just override the per-broker color */
+.brokers-marquee--color .broker-logo-item[data-broker="alpaca"]     .broker-logo-mark { color: #FFD400; }
+.brokers-marquee--color .broker-logo-item[data-broker="binance"]    .broker-logo-mark { color: #F0B90B; }
+.brokers-marquee--color .broker-logo-item[data-broker="bitget"]     .broker-logo-mark { color: #00C2FF; }
+.brokers-marquee--color .broker-logo-item[data-broker="bybit"]      .broker-logo-mark { color: #F7A600; }
+.brokers-marquee--color .broker-logo-item[data-broker="okx"]        .broker-logo-mark { color: var(--text-primary); }
+.brokers-marquee--color .broker-logo-item[data-broker="polymarket"] .broker-logo-mark { color: #2D9CDB; }
+.brokers-marquee--color .broker-logo-item:hover .broker-logo-mark {
+  filter: brightness(1.15);
+}
+
+/* --- Brokers Strip section (between hero and features) --- */
+.brokers-strip {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.brokers-strip-heading {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 2rem;
+}
+
+.brokers-strip .brokers-marquee {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brokers-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 2.5rem 3rem;
+  }
+  /* Hide the duplicated set when not animating */
+  .broker-logo-item[aria-hidden="true"] {
+    display: none;
+  }
+}
+
 /* --- Brokers --- */
 .brokers-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 3rem;
 }
@@ -939,6 +1047,36 @@ code, pre {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
+
+/* Inline SVG icons in broker cards (reuse symbol defs from brokers strip) */
+.broker-card-logo {
+  display: block;
+  height: 56px;
+  width: 56px;
+  margin: 0 auto 1rem;
+  fill: currentColor;
+  color: var(--text-secondary);
+  overflow: visible;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+/* Wordmark logos (Bitget, Bybit) need wider aspect ratio */
+.broker-card-logo--wordmark {
+  width: 140px;
+  height: 42px;
+}
+
+.broker-card:hover .broker-card-logo {
+  transform: scale(1.06);
+}
+
+/* Per-broker brand colors (matches the marquee strip) */
+.broker-card[data-broker="alpaca"]     .broker-card-logo { color: #FFD400; }
+.broker-card[data-broker="binance"]    .broker-card-logo { color: #F0B90B; }
+.broker-card[data-broker="bitget"]     .broker-card-logo { color: #00C2FF; }
+.broker-card[data-broker="bybit"]      .broker-card-logo { color: #F7A600; }
+.broker-card[data-broker="okx"]        .broker-card-logo { color: var(--text-primary); }
+.broker-card[data-broker="polymarket"] .broker-card-logo { color: #2D9CDB; }
 
 .broker-card h3 {
   font-size: 1rem;
@@ -1155,6 +1293,14 @@ code, pre {
   }
   .agents-grid {
     grid-template-columns: 1fr;
+  }
+  /* Tighter marquee on mobile */
+  .brokers-marquee-track {
+    gap: 2.5rem;
+    animation-duration: 28s;
+  }
+  .broker-logo-item img {
+    height: 28px;
   }
   /* Disable hover effects on touch devices */
   .agent-card:hover,
