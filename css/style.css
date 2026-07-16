@@ -2,6 +2,22 @@
    TorchTrade.io — Design System & Styles
    ============================================ */
 
+/* --- Self-hosted fonts (variable, latin) --- */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../assets/fonts/inter-var.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url('../assets/fonts/jetbrains-mono-var.woff2') format('woff2');
+}
+
 /* --- CSS Custom Properties (Dark Mode Default) --- */
 :root {
   --bg: #0a0a0f;
@@ -30,6 +46,7 @@
   --agent-teal: #2dd4bf;
   --agent-indigo: #818cf8;
   --agent-gold: #facc15;
+  --agent-cyan: #22d3ee;
 }
 
 /* --- Light Mode --- */
@@ -408,7 +425,7 @@ code, pre {
 }
 
 .feature-card {
-  padding: 1.5rem;
+  padding: 1.75rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--bg-surface);
@@ -422,20 +439,29 @@ code, pre {
 }
 
 .feature-icon {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--accent-dim);
+  color: var(--accent);
+  margin-bottom: 1.25rem;
 }
+.feature-icon svg { width: 22px; height: 22px; }
 
 .feature-card h3 {
-  font-size: 1rem;
+  font-size: 1.02rem;
   font-weight: 600;
+  letter-spacing: -0.01em;
   margin-bottom: 0.5rem;
 }
 
 .feature-card p {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* --- How It Works --- */
@@ -609,10 +635,32 @@ code, pre {
   background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(250, 204, 21, 0.03) 100%);
 }
 
-.agent-icon {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
+.agent-card.crosstool {
+  border-color: rgba(34, 211, 238, 0.25);
+  background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(34, 211, 238, 0.03) 100%);
 }
+
+.agent-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  color: var(--accent);
+  background: color-mix(in srgb, currentColor 13%, transparent);
+  margin-bottom: 0.9rem;
+}
+.agent-icon svg { width: 22px; height: 22px; }
+.agent-card[data-color="blue"]   .agent-icon { color: var(--agent-blue); }
+.agent-card[data-color="purple"] .agent-icon { color: var(--agent-purple); }
+.agent-card[data-color="green"]  .agent-icon { color: var(--agent-green); }
+.agent-card[data-color="pink"]   .agent-icon { color: var(--agent-pink); }
+.agent-card[data-color="orange"] .agent-icon { color: var(--agent-orange); }
+.agent-card[data-color="teal"]   .agent-icon { color: var(--agent-teal); }
+.agent-card[data-color="indigo"] .agent-icon { color: var(--agent-indigo); }
+.agent-card[data-color="gold"]   .agent-icon { color: var(--agent-gold); }
+.agent-card[data-color="cyan"]   .agent-icon { color: var(--agent-cyan); }
 
 .agent-card h3 {
   font-size: 1.1rem;
@@ -678,6 +726,9 @@ code, pre {
 
 .agent-card[data-color="gold"] h3 { color: var(--agent-gold); }
 .agent-card[data-color="gold"] .agent-tag { background: rgba(250, 204, 21, 0.12); color: var(--agent-gold); }
+
+.agent-card[data-color="cyan"] h3 { color: var(--agent-cyan); }
+.agent-card[data-color="cyan"] .agent-tag { background: rgba(34, 211, 238, 0.12); color: var(--agent-cyan); }
 
 /* --- Research --- */
 .research-grid {
