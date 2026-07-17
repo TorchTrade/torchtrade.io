@@ -559,11 +559,19 @@ obs = env.<span class="function">reset</span>()
         <div class="newsletter-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
         <h3>Get notified when we publish</h3>
         <p>New articles, experiments, and deep-dives, delivered straight to your inbox. No spam, unsubscribe anytime.</p>
-        <!-- Replace the action URL with your newsletter form endpoint (e.g. Buttondown: https://buttondown.email/api/emails/embed-subscribe/YOUR_USERNAME, or a MailerLite embedded-form action). The email field is named "email". -->
-        <form class="newsletter-form" method="post" action="REPLACE_WITH_NEWSLETTER_ENDPOINT" target="_blank" rel="noopener">
-          <input type="email" name="email" class="newsletter-input" placeholder="you@example.com" required aria-label="Email address">
-          <button type="submit" class="btn btn-primary">Notify me</button>
-        </form>
+        <div class="ml-subscribe-form ml-subscribe-form-43859981">
+          <div class="row-form">
+            <form class="ml-block-form newsletter-form" action="https://assets.mailerlite.com/jsonp/2516226/forms/193260796434712459/subscribe" data-code="" method="post" target="_blank">
+              <input type="email" name="fields[email]" class="newsletter-input" placeholder="you@example.com" required aria-label="Email address" autocomplete="email">
+              <button type="submit" class="btn btn-primary">Notify me</button>
+              <input type="hidden" name="ml-submit" value="1">
+              <input type="hidden" name="anticsrf" value="true">
+            </form>
+          </div>
+          <div class="row-success newsletter-success" style="display:none">
+            Thanks! Check your inbox to confirm your subscription.
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -795,6 +803,17 @@ td = env.<span class="function">reset</span>()
       <p id="modal-text">This feature is currently in development. Stay tuned for updates.</p>
     </div>
   </div>
+
+  <!-- MailerLite embedded form (newsletter signup) -->
+  <script>
+    function ml_webform_success_43859981() {
+      var $ = ml_jQuery || jQuery;
+      $('.ml-subscribe-form-43859981 .row-success').show();
+      $('.ml-subscribe-form-43859981 .row-form').hide();
+    }
+  </script>
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
+  <script>fetch("https://assets.mailerlite.com/jsonp/2516226/forms/193260796434712459/takel")</script>
 
 </body>
 </html>

@@ -1418,6 +1418,12 @@ code, pre {
 .newsletter-input::placeholder { color: var(--text-tertiary); }
 .newsletter-input:focus { outline: none; border-color: var(--accent); }
 .newsletter-form .btn { white-space: nowrap; }
+.newsletter-success {
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.75rem 0;
+}
 @media (max-width: 480px) {
   .newsletter-form { flex-direction: column; }
 }
